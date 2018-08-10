@@ -61,8 +61,10 @@ main = do
     putStrLn (show (foldl (*) 2 [1,2,3]))
     putStrLn (show (fmap (*2) [1,2,3]))
     putStrLn (show (fmap (*2) (Just 5)))
-    putStrLn (show ((*2) <$> (Just 10))) -- functor
-    putStrLn (show (Just (*3) <*> (Just 10)))
+    putStrLn (show ((*2) <$> (Just 10))) -- functor!!!
+    putStrLn (show (Just (*3) <*> (Just 10))) -- applicative!!!
+    putStrLn (show ((Just 3) >>= (\x -> Just (2 * x)))) -- monad!!!!
+    putStrLn (show ([1,2,3] >>= (\x -> [2 * x])))
     -- putStrLn (show z)
 
 -- Functor example
