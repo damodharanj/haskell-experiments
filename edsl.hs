@@ -48,6 +48,8 @@ eval expr = case expr of
         else
             pure (r1 `div` r2)
 
+-- maybeAdd :: Maybe Int -> Maybe Int -> Maybe Int
+
 z = (Dharan 10 20 40)
 
 main = do
@@ -56,5 +58,12 @@ main = do
     putStrLn (show (Damo 4))
     putStrLn (show Illa)
     putStrLn (show (eval (Mul (Add (Val 1) (Val 2)) (Div (Val 8) (Val 2)))))
-    -- putStrLn (show (Dharan (1 1 3)))
+    putStrLn (show (foldl (*) 2 [1,2,3]))
+    putStrLn (show (fmap (*2) [1,2,3]))
+    putStrLn (show (fmap (*2) (Just 5)))
+    putStrLn (show ((*2) <$> (Just 10))) -- functor
+    putStrLn (show (Just (*3) <*> (Just 10)))
     -- putStrLn (show z)
+
+-- Functor example
+
