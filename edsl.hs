@@ -1,3 +1,5 @@
+import Control.Applicative
+
 plus a b = a + b
 
 minus a b = a - b
@@ -65,6 +67,9 @@ main = do
     putStrLn (show ([(*2), (+5)] <*> [1,2,4])) -- list applicative
     putStrLn (show ((Just 3) >>= (\x -> Just (2 * x)))) -- maybe monad!!!!
     putStrLn (show ([1,2,3] >>= (\x -> [2 * x]))) -- list monad!!!!
+    putStrLn (show (Just 3 <|> Just 4)) -- maybe alternative!!!!
+    putStrLn (show ([1,2,3] <|> [2,3,4])) -- list alternative!!!!
+    
 
 -- Functor example
 
